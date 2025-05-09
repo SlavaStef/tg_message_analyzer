@@ -12,8 +12,13 @@ except KeyError as e:
 SESSION_NAME = os.environ.get('SESSION_NAME', 'session_monitor')
 
 try:
-    TARGET = os.environ['TARGET']
+    _raw = os.environ['TARGET']
 except KeyError:
     raise RuntimeError("Missing required environment variable: TARGET")
+
+if _raw.lstrip('-').isdigit():
+    TARGET = int(_raw)
+else:
+    TARGET = _raw
 
 DB_PATH = os.environ.get('DB_PATH', 'monitor.db')
