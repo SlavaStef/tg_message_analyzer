@@ -1,0 +1,19 @@
+# Local environment variables
+.env
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyc
+
+# Virtual environment
+.venv/
+venv/
+
+# SQLite database
+*.db
+
+# Session files
+*.session
+*.session-journal
